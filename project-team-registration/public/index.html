@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Team Registration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2><i class="fas fa-users"></i> Project Team Registration</h2>
+      <p>Join our team of innovators and bring your ideas to life</p>
+    </div>
+
+    <div class="form-content">
+      <div class="restriction-note" role="note" aria-live="polite">
+        <strong><i class="fas fa-info-circle"></i> Note:</strong> This form is currently only open to <strong>2nd Semester</strong> <strong>CSE</strong> students. You can see other options, but only submissions from CSE (2nd Semester) will be accepted.
+      </div>
+
+      <form id="teamForm" novalidate>
+        <div class="form-section">
+          <div class="section-title">
+            <i class="fas fa-user-circle"></i> Personal Information
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="required">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name" aria-describedby="nameError">
+              <div class="error-text" id="nameError" aria-live="polite">Please enter your full name</div>
+            </div>
+            <div class="form-group">
+              <label for="roll" class="required">Roll Number / ID</label>
+              <input type="text" id="roll" name="roll" required placeholder="e.g., CSE202301" aria-describedby="rollError">
+              <div class="error-text" id="rollError" aria-live="polite">Please enter your roll number or ID</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <!-- FIXED: removed corrupted characters and restored proper markup -->
+            <div class="form-group">
+              <label for="email" class="required">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com" aria-describedby="emailError">
+              <div class="error-text" id="emailError" aria-live="polite">Please enter a valid email address</div>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="required">Contact Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[6-9][0-9]{9}"
+                title="Enter a 10-digit Indian mobile number starting with 6–9"
+                placeholder="10-digit number"
+                required
+                aria-describedby="phoneError">
+              <div class="error-text" id="phoneError" aria-live="polite">Valid 10-digit number starting with 6–9</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="section-title">
+            <i class="fas fa-graduation-cap"></i> Academic Information
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="year" class="required">Year</label>
+              <select id="year" name="year" required aria-describedby="yearError">
+                <option value="">-- Select Year --</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+              </select>
+              <div class="error-text" id="yearError" aria-live="polite">Please select your year</div>
+            </div>
+            <div class="form-group">
+              <label for="semester" class="required">Semester</label>
+              <select id="semester" name="semester" required aria-describedby="semesterError">
+                <option value="">-- Select Semester --</option>
+                <option value="1st Semester">1st Semester</option>
+                <option value="2nd Semester">2nd Semester</option>
+                <option value="3rd Semester">3rd Semester</option>
+                <option value="4th Semester">4th Semester</option>
+                <option value="5th Semester">5th Semester</option>
+                <option value="6th Semester">6th Semester</option>
+                <option value="7th Semester">7th Semester</option>
+                <option value="8th Semester">8th Semester</option>
+              </select>
+              <div class="error-text" id="semesterError" aria-live="polite">Please select your semester</div>
+              <!-- subtle inline hint -->
+              <div class="instructions" id="semesterHint" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="branch" class="required">Branch</label>
+            <select id="branch" name="branch" required aria-describedby="branchError">
+              <option value="">-- Select Branch --</option>
+              <option value="CSE">Computer Science & Engineering</option>
+              <option value="IT">Information Technology</option>
+              <option value="ECE">Electronics & Communication Engineering</option>
+              <option value="EE">Electrical Engineering</option>
+              <option value="ME">Mechanical Engineering</option>
+              <option value="CE">Civil Engineering</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="text" id="otherBranchInput" name="otherBranch" placeholder="Please specify your branch" aria-describedby="branchError">
+            <div class="error-text" id="branchError" aria-live="polite">Please select your branch</div>
+            <div class="instructions" id="branchHint" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="section-title">
+            <i class="fas fa-code"></i> Technical Skills
+          </div>
+
+          <div class="form-group">
+            <label>Which programming languages do you know? (Select all that apply)</label>
+            <div class="option-group">
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="C" id="langC">
+                <label for="langC">C</label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="C++" id="langCpp">
+                <label for="langCpp">C++</label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="Java" id="langJava">
+                <label for="langJava">Java</label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="Python" id="langPython">
+                <label for="langPython">Python</label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="JavaScript" id="langJS">
+                <label for="langJS">JavaScript</label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="PHP" id="langPHP">
+                <label for="langPHP">PHP</label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="SQL" id="langSQL">
+                <label for="langSQL">SQL / Database</label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" name="lang" value="Other" id="otherLang">
+                <label for="otherLang">Other</label>
+              </div>
+            </div>
+            <input type="text" id="otherLangInput" name="otherLang" placeholder="Please specify other language">
+          </div>
+
+          <div class="form-group">
+            <label for="proficiency">Rate your proficiency in programming (1 = Beginner, 5 = Expert)</label>
+            <div class="range-container">
+              <input type="range" id="proficiency" name="proficiency" min="1" max="5" value="3" aria-describedby="proficiencyValue">
+              <span class="range-value" id="proficiencyValue">3</span>
+            </div>
+            <div class="range-labels">
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="area">Which area are you most interested in contributing to?</label>
+            <select id="area" name="area">
+              <option value="">-- Select Area --</option>
+              <option>Frontend Development</option>
+              <option>Backend Development</option>
+              <option>Database Management</option>
+              <option>UI/UX & Design</option>
+              <option>Documentation & Research</option>
+              <option>Project Coordination</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="section-title">
+            <i class="fas fa-briefcase"></i> Experience & Availability
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Have you worked on any project before? If yes, briefly describe.</label>
+            <textarea id="experience" name="experience" rows="3" placeholder="Describe your previous project experience..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>How many hours per week can you contribute after mid-semester exams?</label>
+            <div class="option-group">
+              <div class="option-item">
+                <input type="radio" name="hours" value="<3" id="hoursLess3">
+                <label for="hoursLess3">Less than 3 hours</label>
+              </div>
+              <div class="option-item">
+                <input type="radio" name="hours" value="3-5" id="hours3-5">
+                <label for="hours3-5">3–5 hours</label>
+              </div>
+              <div class="option-item">
+                <input type="radio" name="hours" value="5-8" id="hours5-8">
+                <label for="hours5-8">5–8 hours</label>
+              </div>
+              <div class="option-item">
+                <input type="radio" name="hours" value=">8" id="hoursMore8">
+                <label for="hoursMore8">More than 8 hours</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Are you willing to learn new skills/languages if required?</label>
+            <div class="option-group" style="grid-template-columns: repeat(2, 1fr);">
+              <div class="option-item">
+                <input type="radio" name="learn" value="Yes" id="learnYes">
+                <label for="learnYes">Yes</label>
+              </div>
+              <div class="option-item">
+                <input type="radio" name="learn" value="No" id="learnNo">
+                <label for="learnNo">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="section-title">
+            <i class="fas fa-question-circle"></i> Additional Information
+          </div>
+
+          <div class="form-group">
+            <label for="reason">Why do you want to join this project team?</label>
+            <textarea id="reason" name="reason" rows="3" placeholder="Share your motivation for joining..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="option-item">
+              <input type="checkbox" name="confirm" id="confirm" required>
+              <label for="confirm" class="required">I understand that this is a voluntary (unpaid) project and I am joining out of genuine interest.</label>
+            </div>
+            <div class="error-text" id="confirmError" aria-live="polite">You must agree to this condition</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn" aria-live="polite">
+          <i class="fas fa-paper-plane"></i> <span>Submit Registration</span>
+          <i class="fas fa-spinner fa-spin" style="display: none;"></i>
+        </button>
+      </form>
+
+      <div id="msg" class="alert alert-success" aria-live="polite"></div>
+      <div id="error" class="alert alert-error" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="confirmation-modal" id="confirmationModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <h3 id="modalTitle"><i class="fas fa-check-circle"></i> Registration Successful!</h3>
+      <p>Your registration has been submitted successfully. How would you like to receive your confirmation?</p>
+
+      <div class="confirmation-options">
+        <button class="confirmation-btn btn-whatsapp" id="whatsappBtn">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="confirmation-btn btn-email" id="emailBtn">
+          <i class="fas fa-envelope"></i> Email
+        </button>
+        <button class="confirmation-btn btn-close" id="closeModalBtn">
+          <i class="fas fa-times"></i> Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
