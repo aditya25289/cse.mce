@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bihar Yaatra - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        :root {
+            --saffron: #FF671F;
+            --green: #046A38;
+            --cream: #F5F1E6;
+            --dark: #2D2D2D;
+            --terracotta: #B3543A;
+            --blue: #3A6EA5;
+            --chhath-orange: #FF7F32;
+            --chhath-yellow: #FFD700;
+            --chhath-red: #D22B2B;
+            --chhath-blue: #1E90FF;
+            --chhath-sky: #87CEEB;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 30px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--saffron), var(--terracotta));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-icon i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            color: var(--saffron);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(rgba(245, 241, 230, 0.9), rgba(245, 241, 230, 0.9));
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .coming-soon-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--saffron);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .stay-tuned-text {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--saffron);
+            position: relative;
+        }
+
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 103, 31, 0.2);
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .countdown-item {
+            background: white;
+            padding: 20px 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--saffron);
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 14px;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            margin: 40px 0;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .cta-section p {
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .email-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            background: white;
+        }
+
+        .notify-btn {
+            background: linear-gradient(to right, var(--saffron), var(--terracotta));
+            color: white;
+            border: none;
+            padding: 0 35px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .notify-btn:hover {
+            background: linear-gradient(to right, var(--terracotta), var(--saffron));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(179, 84, 58, 0.4);
+        }
+
+        .privacy-note {
+            font-size: 14px;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        /* Success Messages */
+        .success-message {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+            border-left: 5px solid #28a745;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
+        }
+
+        .emailjs-success {
+            background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+            color: #0c5460;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+            border-left: 5px solid #17a2b8;
+            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.2);
+        }
+
+        .error-message {
+            background: linear-gradient(135deg, #f8d7da, #f1b0b7);
+            color: #721c24;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: none;
+            border-left: 5px solid #dc3545;
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.2);
+        }
+
+        .message-icon {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--saffron), var(--terracotta));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(255, 103, 31, 0.3);
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 28px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--saffron);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 103, 31, 0.4);
+        }
+
+        .contact-email {
+            margin: 15px 0;
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Professional Chhath Puja Popup */
+        .chhath-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .chhath-popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .chhath-popup {
+            background: white;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .chhath-popup.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chhath-popup-header {
+            background: linear-gradient(135deg, var(--chhath-orange), var(--chhath-yellow));
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chhath-popup-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .chhath-popup-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .chhath-popup-subtitle {
+            font-size: 16px;
+            color: white;
+            font-weight: 500;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .chhath-popup-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 0;
+            height: 400px;
+        }
+
+        .chhath-popup-image {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            background: linear-gradient(135deg, #FFE4B5, #FFA07A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chhath-popup-image-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--chhath-orange);
+            padding: 20px;
+            position: relative;
+        }
+
+        .chhath-popup-image-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .chhath-popup-sun {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, var(--chhath-yellow), var(--chhath-orange));
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            animation: sunGlow 3s infinite alternate;
+        }
+
+        @keyframes sunGlow {
+            0% {
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 60px rgba(255, 215, 0, 0.9), 0 0 100px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .chhath-popup-image-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .chhath-popup-image-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--chhath-orange);
+        }
+
+        .chhath-popup-image-text p {
+            font-size: 16px;
+            color: #666;
+            max-width: 250px;
+        }
+
+        .chhath-popup-info {
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(to bottom, #fafafa, #ffffff);
+        }
+
+        .chhath-popup-text {
+            margin-bottom: 30px;
+        }
+
+        .chhath-popup-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--dark);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .chhath-popup-text p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .chhath-popup-close {
+            background: linear-gradient(to right, var(--chhath-orange), var(--chhath-yellow));
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 127, 50, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            align-self: flex-start;
+        }
+
+        .chhath-popup-close:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 127, 50, 0.4);
+        }
+
+        .chhath-popup-decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--chhath-orange), var(--chhath-yellow), var(--chhath-orange));
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 15px 10px;
+            }
+            
+            .countdown-number {
+                font-size: 28px;
+            }
+            
+            .email-form {
+                flex-direction: column;
+                border-radius: 12px;
+            }
+            
+            .email-input, .notify-btn {
+                width: 100%;
+                border-radius: 0;
+            }
+            
+            .notify-btn {
+                padding: 15px;
+            }
+            
+            .coming-soon-text {
+                font-size: 36px;
+            }
+            
+            .stay-tuned-text {
+                font-size: 20px;
+            }
+            
+            .chhath-popup-title {
+                font-size: 28px;
+            }
+            
+            .chhath-popup-subtitle {
+                font-size: 15px;
+            }
+            
+            .chhath-popup-content {
+                grid-template-columns: 1fr;
+                height: auto;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+            
+            .chhath-popup-image {
+                height: 250px;
+            }
+            
+            .chhath-popup-info {
+                padding: 25px 20px;
+            }
+            
+            .chhath-popup-sun {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 24px;
+            }
+            
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                padding: 12px 8px;
+            }
+            
+            .countdown-number {
+                font-size: 22px;
+            }
+            
+            .countdown-label {
+                font-size: 12px;
+            }
+            
+            .coming-soon-text {
+                font-size: 28px;
+            }
+            
+            .stay-tuned-text {
+                font-size: 18px;
+            }
+            
+            .chhath-popup-title {
+                font-size: 24px;
+            }
+            
+            .chhath-popup-text h3 {
+                font-size: 22px;
+            }
+            
+            .chhath-popup-sun {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Chhath Puja Popup -->
+    <div class="chhath-popup-overlay" id="chhathPopup">
+        <div class="chhath-popup">
+            <div class="chhath-popup-header">
+                <h2 class="chhath-popup-title">Chhath Puja 2025</h2>
+                <p class="chhath-popup-subtitle">Celebrating Bihar's Sacred Festival</p>
+            </div>
+            <div class="chhath-popup-content">
+                <div class="chhath-popup-image">
+                    <div class="chhath-popup-image-content">
+                        <div class="chhath-popup-sun"></div>
+                        <div class="chhath-popup-image-text">
+                            <h3>Happy Chhath Puja</h3>
+                            <p>May the Sun God bless you with health, prosperity, and happiness</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chhath-popup-info">
+                    <div class="chhath-popup-text">
+                        <h3>Wishing You a Blessed Chhath Puja</h3>
+                        <p>May the Sun God bless you with health, prosperity, and happiness as we celebrate this sacred festival of devotion and gratitude.</p>
+                        <p>Honoring the rich cultural heritage and spiritual traditions of Bihar, where women stand in reverence to the setting and rising sun.</p>
+                    </div>
+                    <button class="chhath-popup-close#" id="closePopup">
+                        <!-- <i class="fas fa-arrow-right"></i> -->
+                        <!-- Continue to Bihar Yaatra -->
+                    </button>
+                </div>
+            </div>
+            <div class="chhath-popup-decoration"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="logo-text">Bihar<span>Yaatra</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="coming-soon-text">Coming Soon</div>
+                <div class="stay-tuned-text">Stay Tuned For Something Amazing</div>
+                
+                <h1>Embark on the <span>Soul of India</span></h1>
+                <p>Bihar Yaatra is your ultimate guide to the hidden gems, profound history, and vibrant culture of Bihar. We're crafting an unforgettable experience for the discerning traveler.</p>
+                
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h2>Get an Exclusive Launch Offer!</h2>
+                    <p>Be the first to know when we go live. Sign up and receive a special discount on your first curated Bihar travel package.</p>
+                    
+                    <form class="email-form" id="emailForm">
+                        <input type="email" class="email-input" id="emailInput" placeholder="Enter your email address" required>
+                        <button type="submit" class="notify-btn" id="submitBtn">Notify Me</button>
+                    </form>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle message-icon"></i> 
+                        <strong>Thank you for subscribing!</strong><br>
+                        We've added you to our exclusive list and will notify you as soon as we launch Bihar Yaatra.
+                    </div>
+                    
+                    <div class="emailjs-success" id="emailjsSuccess">
+                        <i class="fas fa-paper-plane message-icon"></i> 
+                        <strong>Confirmation Sent!</strong><br>
+                        We've successfully sent your subscription request to BiharYaatra. You'll receive a welcome email shortly with your exclusive launch offer.
+                    </div>
+                    
+                    <div class="error-message" id="errorMessage">
+                        <i class="fas fa-exclamation-triangle message-icon"></i> 
+                        <strong>Something went wrong!</strong><br>
+                        Please check your email address and try again. If the problem persists, contact us directly at hello@biharyaatra.com.
+                    </div>
+                    
+                    <p class="privacy-note">We respect your privacy. No spam, ever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <h3>Curated Itineraries</h3>
+                <p>Expertly designed travel routes covering Buddhist Circuit, Heritage Trails, and cultural experiences across Bihar's most beautiful destinations.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h3>Rich History</h3>
+                <p>Explore ancient sites, monuments, and the profound historical significance of Bihar through detailed guides and expert commentary.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3>Stunning Visuals</h3>
+                <p>Breathtaking photo galleries and virtual tours showcasing Bihar's natural beauty, vibrant culture, and timeless traditions.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Authentic Cuisine</h3>
+                <p>Discover the flavors of Bihar with our comprehensive guide to local dishes, culinary experiences, and traditional cooking methods.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BMz8wxhh2/" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/biharyaatra/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/biharyaatra" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="contact-email">
+                    <i class="fas fa-envelope"></i> hello@biharyaatra.com
+                </div>
+                
+                <div class="copyright">
+                    © 2025 Bihar Yaatra. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS Integration -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your credentials
+        emailjs.init("QwlJHKqj_DbUEaNHm");
+
+        // Show Chhath Puja Popup
+        document.addEventListener('DOMContentLoaded', function() {
+            const popupOverlay = document.getElementById('chhathPopup');
+            const popup = document.querySelector('.chhath-popup');
+            const closeBtn = document.getElementById('closePopup');
+            
+            // Show popup after a short delay
+            setTimeout(() => {
+                popupOverlay.classList.add('active');
+                popup.classList.add('active');
+            }, 1000);
+            
+            // Close popup when button is clicked
+            closeBtn.addEventListener('click', function() {
+                popupOverlay.classList.remove('active');
+                popup.classList.remove('active');
+            });
+            
+            // Close popup when clicking outside
+            popupOverlay.addEventListener('click', function(e) {
+                if (e.target === popupOverlay) {
+                    popupOverlay.classList.remove('active');
+                    popup.classList.remove('active');
+                }
+            });
+        });
+
+        // Security: Disable right-click and context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Security: Disable developer tools shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const launchDate = new Date('December 31, 2024 23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (timeLeft < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown').innerHTML = '<h3 style="font-size: 28px; color: var(--saffron);">Website Under Development!</h3>';
+            }
+        }
+        
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Email Form Submission with EmailJS
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('emailInput');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const emailjsSuccess = document.getElementById('emailjsSuccess');
+            const errorMessage = document.getElementById('errorMessage');
+            const email = emailInput.value;
+            
+            // Hide all messages
+            successMessage.style.display = 'none';
+            emailjsSuccess.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            if (email) {
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // Send email using EmailJS
+                emailjs.send("service_iggc2as", "template_yd9clvj", {
+                    to_email: "hello@biharyaatra.com",
+                    from_email: email,
+                    message: "New subscriber for Bihar Yaatra: " + email,
+                    subject: "New Bihar Yaatra Subscriber",
+                    subscription_date: new Date().toLocaleDateString()
+                })
+                .then(function(response) {
+                    console.log('SUCCESS! Email sent to hello@biharyaatra.com', response.status, response.text);
+                    
+                    // Show EmailJS success message
+                    emailjsSuccess.style.display = 'block';
+                    emailInput.value = '';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = 'Notify Me';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                    
+                    // Reset button immediately
+                    submitBtn.innerHTML = 'Notify Me';
+                    submitBtn.disabled = false;
+                });
+            }
+        });
+        
+        // Add some animation to feature cards on scroll
+        const featureCards = document.querySelectorAll('.feature-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        featureCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
